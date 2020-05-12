@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonalController!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>Personale table</h1>
+        <a class="create_buttons" href="{{ path('create_personal') }}">Create customer</a>
+        {% if count > 0 %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Specification</th>
+                    <th>Telephone</th>
+                    <th>Delete element</th>
+                    <th>Use element</th>
+                </tr>
+
+                {% for personal in personals %}
+                    <tr>
+                        <td>
+                            <div>{{ personal.name }}</div>
+                        </td>
+                        <td>
+                            <div>{{ personal.specification }} </div>
+                        </td>
+                        <td>
+                            <div>{{ personal.telephone }} </div>
+                        </td>
+                        <td>
+                            <form action="{{ path('update_personal', {'personal': personal.id} ) }}">
+                                <button class="change_buttons" type="submit" name="update[]">Update</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{ path('delete_personal', {'id': personal.id} ) }}">
+                                <button class="change_buttons" type="submit" name="delete[]">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h2> You don't have any personal units</h2>
+        {% endif %}
+        <br>
+        <a class="create_buttons" href="{{ path('home') }}">Home page</a>
+    </div>
+{% endblock %}

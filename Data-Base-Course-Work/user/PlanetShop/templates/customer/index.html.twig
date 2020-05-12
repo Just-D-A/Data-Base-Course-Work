@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CustomerController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Customers</h1>
+    {% if count > 0 %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Purse</th>
+            <th>Telephone</th>
+            <th>Use customer</th>
+        </tr>
+
+        {% for customer in customers %}
+            <tr>
+
+                <td>
+                    <div>{{ customer.name }}</div>
+                </td>
+                <td>
+                    <div>{{ customer.purse }} </div>
+                </td>
+                <td>
+                    <div>{{ customer.telephone }} </div>
+                </td>
+
+                <td>
+                    <form action="{{ path('cart', {'id': customer.id} ) }}">
+                        <button class="change_buttons" type="submit">Use</button>
+                    </form>
+                </td>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+    {% else %}
+        <h2> You don't have any customers</h2>
+    {% endif %}
+    <br>
+    <a class="create_buttons" href="{{ path('home') }}">Home page</a>
+    {% endblock %}

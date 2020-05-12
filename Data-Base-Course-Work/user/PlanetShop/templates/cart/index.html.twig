@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartListController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>This is your cart</h1>
+    <div class = "purse"> ${{ customer.purse }}  </div>
+    <form action="{{ path('space_object', {'id': id} ) }}">
+        <button class="change_buttons" type="submit">Add space objects</button>
+    </form>
+
+    <form action="{{ path('customer_page', {'id': id} ) }}">
+        <button class="change_buttons" type="submit">Show my space objects</button>
+    </form>
+    {% if count > 0 %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Image Path</th>
+            <th>Cost</th>
+            <th>Delete from cart</th>
+            <th>Buy</th>
+
+        </tr>
+
+        {% for space_object in space_objects %}
+            <tr>
+                <td>
+                    <div>{{ space_object.name }}</div>
+                </td>
+                <td>
+                    <div>{{ space_object.type }} </div>
+                </td>
+                <td>
+                    <div><img class="space_object_img" src="{{ space_object.image_path }}"></div>
+                </td>
+                <td>
+                    <div>{{ space_object.cost }} </div>
+                </td>
+                <td>
+                    <form action="{{ path('delete_cart', {'id':  id, 'id_cart': space_object.id_cart} ) }}">
+                        <button class="change_buttons" type="submit" name="delete[]">Delete</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ path('add_transaction', {'id':  id, 'space_object': space_object.id} ) }}">
+                        <button class="change_buttons" type="submit" name="delete[]">Buy</button>
+                    </form>
+                </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <h2> You don't have any space objects in your cart</h2>
+    {% endif %}
+    <a class="create_buttons" href="{{ path('home') }}">Home page</a>
+
+</div>
+{% endblock %}
+

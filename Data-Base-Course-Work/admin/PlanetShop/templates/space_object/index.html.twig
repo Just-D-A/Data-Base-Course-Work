@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Space Object{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Space Objects</h1>
+    <div class="purse"> ${{ customer.purse }}  </div>
+    <a class="create_buttons" href="{{ path('create_space_object', {'id':  id} ) }}">Create space object</a>
+    {% if count > 0 %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Image</th>
+                <th>Cost</th>
+                <th>Update element</th>
+                <th>Delete element</th>
+            </tr>
+
+            {% for space_object in space_objectes %}
+                <tr>
+
+                    <td>
+                        <div>{{ space_object.name }}</div>
+                    </td>
+                    <td>
+                        <div>{{ space_object.type }} </div>
+                    </td>
+                    <td>
+                        <div><img class="space_object_img" src="{{ space_object.image_path }}"></div>
+                    </td>
+                    <td>
+                        <div>{{ space_object.cost }} </div>
+                    </td>
+                    <td>
+                        <form action="{{ path('update_space_object', {'id':  id, 'space_object': space_object.id} ) }}">
+                            <button class="change_buttons" type="submit" name="update[]">Update</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ path('delete_space_object', {'id':  id, 'space_object': space_object.id} ) }}">
+                            <button class="change_buttons" type="submit" name="delete[]">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h2> There aren't available space objects</h2>
+    {% endif %}
+    <br>
+    <a class="create_buttons" href="{{ path('cart', {'id':  id} ) }}">Back to cart</a>
+    {% endblock %}
+
+

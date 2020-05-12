@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Planet shop{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <ul>
+            <h1>Welcome Planet Shop!</h1>
+            <a class="buttons_home_page" href="{{ path('customer') }}">Customers</a>
+            <a class="buttons_home_page" href="{{ path('personal') }}">Personal table</a>
+        </ul>
+    </div>
+{% endblock %}

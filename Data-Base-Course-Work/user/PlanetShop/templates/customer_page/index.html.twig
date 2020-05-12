@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CustomerPageController!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>This is your space objects</h1>
+        <form action="{{ path('space_object', {'id': id} ) }}">
+            <button class="change_buttons" type="submit">Add space objects</button>
+        </form>
+        {% if count > 0 %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Image Path</th>
+                    <th>Cost</th>
+
+                </tr>
+
+                {% for space_object in space_objects %}
+                    <tr>
+                        <td>
+                            <div>{{ space_object.name }}</div>
+                        </td>
+                        <td>
+                            <div>{{ space_object.type }} </div>
+                        </td>
+                        <td>
+                            <div><img class="space_object_img" src="{{ space_object.image_path }}"></div>
+                        </td>
+                        <td>
+                            <div>{{ space_object.cost }} </div>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h2> You don't have any space objects</h2>
+        {% endif %}
+    </div>
+{% endblock %}

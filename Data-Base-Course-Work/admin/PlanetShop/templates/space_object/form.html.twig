@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block tittle %}New {% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1> New Space Object</h1>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        {{ form_start(form) }}
+        <div class="form-group">
+            <label for="textarea">{{ form_label(form.name) }}</label><br>
+            {{ form_widget(form.name) }}
+        </div>
+        <div class="form-group">
+            <label for="textarea">{{ form_label(form.type) }}  </label><br>
+            {{ form_widget(form.type) }}
+        </div>
+        <div class="form-group">
+            <label for="textarea">{{ form_label(form.image_path) }}  </label><br>
+            {{ form_widget(form.image_path) }}
+        </div>
+        <div class="form-group">
+            <label for="textarea">{{ form_label(form.cost) }}  </label><br>
+            {{ form_widget(form.cost) }}
+        </div>
+        <button type="submit">Save</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

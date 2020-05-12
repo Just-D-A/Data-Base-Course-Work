@@ -1,0 +1,118 @@
+body {
+    background-color: LightBlue;
+}
+
+h1 {
+    color: Navy;
+    margin-left: 550px;
+}
+
+h2 {
+    color: Navy;
+    margin-left: 500px;
+    text-decoration: underline;
+}
+
+.buttons_home_page {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px 15px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.4s ease-in-out;
+    border-radius: 4px;
+    background-color: white;
+
+
+}
+
+.create_buttons {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px 10px;
+    padding: 5px 9px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.4s ease-in-out;
+    background-color: AntiqueWhite;
+}
+
+.change_buttons {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 10px 20px;
+    padding: 10px 15px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.4s ease-in-out;
+    border-radius: 4px;
+    background-color: Khaki;
+}
+
+.card-body {
+    color: Navy;
+    margin-left: 20px;
+}
+
+.filed_db {
+    margin-left: 10px;
+}
+
+table, th, td {
+    color: Navy;
+    border-collapse: collapse;
+    border-bottom: 1px solid Goldenrod;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+}
+
+.space_object_img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 150px;
+    max-height: 100px;
+}
+
+.purse {
+    float:right;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -50px;
+    margin-right: 130px;
+}
+
+.example-wrapper {
+    margin: 1em auto;
+    max-width: 100%;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+}
+
+.example-wrapper code {
+    background: #F5F5F5;
+    padding: 2px 6px;
+}

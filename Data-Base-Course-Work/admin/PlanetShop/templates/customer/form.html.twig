@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block tittle  %}New {% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1> New Customer</h1>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        {{ form_start(form) }}
+        <div class="form-group">
+            <label for="textarea">{{ form_label(form.name) }}</label><br>
+            {{ form_widget(form.name) }}
+        </div>
+        <div class="form-group">
+            <label for="textarea">{{ form_label(form.purse) }}  </label><br>
+            {{ form_widget(form.purse) }}
+
+        </div>
+        <div class="form-group">
+            <label for="textarea">{{ form_label(form.telephone) }}  </label><br>
+            {{ form_widget(form.telephone) }}
+
+        </div>
+          <button type="submit">Save</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

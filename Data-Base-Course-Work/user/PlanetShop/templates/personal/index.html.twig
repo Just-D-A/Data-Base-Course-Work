@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonalController!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>Personale table</h1>
+        {% if count > 0 %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Specification</th>
+                    <th>Telephone</th>
+                </tr>
+
+                {% for personal in personals %}
+                    <tr>
+                        <td>
+                            <div>{{ personal.name }}</div>
+                        </td>
+                        <td>
+                            <div>{{ personal.specification }} </div>
+                        </td>
+                        <td>
+                            <div>{{ personal.telephone }} </div>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h2> You don't have any p</h2>
+        {% endif %}
+        <br>
+        <a class="create_buttons" href="{{ path('home') }}">Home page</a>
+    </div>
+{% endblock %}
